@@ -4,6 +4,7 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput    
 from kivy.uix.button import Button
 import kivy
+from pkg_resources import PkgResourcesDeprecationWarning
 
 class KivyApp(App):
     def build(self):
@@ -15,11 +16,10 @@ class MyGrid(GridLayout):
    
         self.rows = 2
 
-
-        self.frame = GridLayout()
+        self.frame = GridLayout()   #gorny frame
         self.frame.cols = 2
 
-        self.frame1 = GridLayout()
+        self.frame1 = GridLayout()  #frame z labelka i polem tekstowym
         self.frame1.rows = 2
 
         self.tekst = Label(text = "Podaj swoje imię i nazwisko")
@@ -33,11 +33,16 @@ class MyGrid(GridLayout):
         self.frame.add_widget(self.okno)
         self.add_widget(self.frame)
 
-        self.click = Button(text = "Submit")
+        self.click = Button(text = "Submit")  
+        self.click.bind(on_press = self.pressed)
         self.add_widget(self.click)
 
+
+    # obsluga zdazenia klikniecia w przycisk
     def pressed(self, instance):
-        pass
+        imie = self.pole_tekstowe.text
+        self.pole_tekstowe.text = ""   #czysczenie pola tekstowego
+        self.okno.text = imie    #printowanie inputu w labelce w prawym gornym rogu
 
 if __name__ == "__main__":
     KivyApp().run()
