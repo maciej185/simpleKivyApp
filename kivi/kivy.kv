@@ -1,6 +1,19 @@
-
 <MyGrid>:
+    btn:btn
+    tekst:btn.text
+    canvas:
+        Color: 
+            rgba: self.color
+
     Touch:
-        Button:
-            text:"Clear"
+        canvas:
+            Color: 
+                rgba: self.color
+                
+    Button:
+        id: btn
+        text:"Clear"
+        on_press: root.pressed()
+        on_release: root.lifted()
+
                 
