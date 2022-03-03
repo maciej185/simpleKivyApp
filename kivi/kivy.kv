@@ -1,26 +1,6 @@
-<MyGrid>
 
-    imie: imie
-
-    GridLayout:
-        size: root.width - 100, root.height - 100
-        
-        rows: 2
-        cols: 1
-
-        GridLayout: 
-            cols: 2
-
-            GridLayout:
-                rows: 2
-                Label:
-                    text: "Podaj swoje imię"
-                TextInput:
-                    id: imie
-                    multiline: False
-            Label:
-                text: ""
-                on_press: root.pressed()
+<MyGrid>:
+    Touch:
         Button:
-            text: "Submit"
-        
+            text:"Clear"
+                
