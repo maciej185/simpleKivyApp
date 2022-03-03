@@ -1,19 +1,28 @@
 <MyGrid>:
     btn:btn
+    btn1: btn1
+    btn2: btn2
     tekst:btn.text
-    canvas:
-        Color: 
-            rgba: self.color
 
     Touch:
+        id: okno
         canvas:
             Color: 
-                rgba: self.color
-                
+                rgba: root.color
+            
     Button:
         id: btn
         text:"Clear"
-        on_press: root.pressed()
+        on_press: root.pressed(canvass = okno)
         on_release: root.lifted()
+    Button:
+        id: btn1
+        text:"+"
+        on_press: root.increase(canvass = okno)
+    Button:
+        id: btn2
+        text:"-"
+        pos: (0.5, 0.5)
+        on_press: root.decrease(canvass = okno)
 
                 
