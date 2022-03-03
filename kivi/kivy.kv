@@ -12,17 +12,21 @@
             
     Button:
         id: btn
+        size: (100,50)
         text:"Clear"
-        on_press: root.pressed(canvass = okno)
+        on_press: root.pressed(canvass = okno.canvas)
         on_release: root.lifted()
     Button:
         id: btn1
+        pos:(100,0)
+        size:(50,50)
         text:"+"
         on_press: root.increase(canvass = okno)
     Button:
         id: btn2
         text:"-"
-        pos: (0.5, 0.5)
+        size:(50,50)
+        pos: (150, 0)
         on_press: root.decrease(canvass = okno)
 
                 
